@@ -1834,7 +1834,7 @@ MonoBehaviour:
   isHoldingJump: 0
   maxHoldJumpTime: 0.25
   holdJumpTimer: 0
-  jumpGroundThreshold: 4
+  jumpGroundThreshold: 1
   playerAnimator: {fileID: 1493421827}
 --- !u!4 &1833542620
 Transform:

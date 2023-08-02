@@ -18,8 +18,17 @@ public class player : MonoBehaviour
     public bool isHoldingJump = false;
     public float maxHoldJumpTime = 0.4f;
     public float holdJumpTimer = 0.0f;
-    public float jumpGroundThreshold = 2;
+    public float jumpGroundThreshold = 1;
     public Animator playerAnimator;
+
+    private string currentAnimState;
+
+    //Animation States
+    const string PLAYER_RUN = "player_run";
+    const string PLAYER_JUMP = "player_jump";
+    const string PLAYER_FALL = "player_fall";
+    const string PLAYER_PEAK = "playerpeakjump";
+
     void Start()
     {
         
@@ -40,31 +49,22 @@ public class player : MonoBehaviour
                 isGrounded = false;
                 velocity.y = jumpVelocity;
                 isHoldingJump = true;
-                //rest jump timer
+                //reset jump timer
                 holdJumpTimer = 0.0f;
+                ChangeAnimationState(PLAYER_JUMP);
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isHoldingJump = false;
         }
-
         if (isGrounded == true)
         {
-            playerAnimator.SetBool("isGrounded", true);
+            ChangeAnimationState(PLAYER_RUN);
         }
-        else
+        if (isHoldingJump == false && isGrounded == false)
         {
-            playerAnimator.SetBool("isGrounded", false);
-        }
-
-        if (isHoldingJump == true)
-        {
-            playerAnimator.SetBool("isHoldingJump", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("isHoldingJump", false);
+            ChangeAnimationState(PLAYER_PEAK);
         }
     }
 
@@ -119,6 +119,16 @@ public class player : MonoBehaviour
         //update position
         transform.position = pos;
     }
+    void ChangeAnimationState(string newAnimState)
+    {
+        //Stop the same animation from interrupting itself
+        if (currentAnimState == newAnimState) return;
 
+        //Play the Animation
+        playerAnimator.Play(newAnimState);
+
+        //reassign the current state
+        currentAnimState = newAnimState;
+    }
 
 }
