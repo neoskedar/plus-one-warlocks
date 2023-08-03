@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -130,5 +131,14 @@ public class player : MonoBehaviour
         //reassign the current state
         currentAnimState = newAnimState;
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
 
+        Debug.Log(collision.gameObject.name + " : " + gameObject.name + " : " + Time.deltaTime);
+
+        if (collision.tag == "Hazard")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
