@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 1067027886}
   - component: {fileID: 1067027887}
   m_Layer: 0
-  m_Name: Hazards
+  m_Name: HazardSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,6 +781,10 @@ MonoBehaviour:
   obstacle:
   - {fileID: 9052625485457189366, guid: 513085e33e4c542f7b5f16de28556d49, type: 3}
   - {fileID: 2637993893398622447, guid: 865f0c269185c42019c66d3ecef06ddd, type: 3}
+  smallMin: 0.25
+  smallMax: 0.75
+  largeMin: 1
+  largeMax: 1.5
 --- !u!1 &1177953080
 GameObject:
   m_ObjectHideFlags: 0
