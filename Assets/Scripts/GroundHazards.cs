@@ -14,7 +14,6 @@ public class GroundHazards : MonoBehaviour
     }
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -26,7 +25,9 @@ public class GroundHazards : MonoBehaviour
         pos.x -= realVelocity * Time.fixedDeltaTime;
 
         if (pos.x <= -25)
-            pos.x = 50;
+        {
+            Destroy(this.gameObject);
+        }
 
 
         transform.position = pos;
