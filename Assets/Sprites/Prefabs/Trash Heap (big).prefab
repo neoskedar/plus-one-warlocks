@@ -99,9 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depth: 1
-  obstacle:
-  - {fileID: 9052625485457189366}
-  - {fileID: 2637993893398622447, guid: 865f0c269185c42019c66d3ecef06ddd, type: 3}
 --- !u!58 &9052625485457189368
 CircleCollider2D:
   m_ObjectHideFlags: 0
