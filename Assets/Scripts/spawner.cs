@@ -21,6 +21,11 @@ public class spawner : MonoBehaviour
 
     }
 
+    public void StartSpawner()
+    {
+        StartCoroutine("Spawn");
+    }
+
     IEnumerator Spawn()
     {
         Debug.Log(spawnDelay);
