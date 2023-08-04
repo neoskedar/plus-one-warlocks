@@ -28,7 +28,6 @@ public class spawner : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        Debug.Log(spawnDelay);
         yield return new WaitForSeconds(spawnDelay);
         randomObstacle = Random.Range(0, obstacle.Length);
         Instantiate(obstacle[randomObstacle], transform.position, Quaternion.identity);

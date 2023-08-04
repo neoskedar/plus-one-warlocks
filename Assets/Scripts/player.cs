@@ -21,6 +21,7 @@ public class player : MonoBehaviour
     public float holdJumpTimer = 0.0f;
     public float jumpGroundThreshold = 1;
     public Animator playerAnimator;
+    public GameObject gameOverScreen;
 
     private string currentAnimState;
 
@@ -32,7 +33,7 @@ public class player : MonoBehaviour
 
     void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -138,7 +139,11 @@ public class player : MonoBehaviour
 
         if (collision.tag == "Hazard")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            int score = (int)distance;
+            Debug.Log("Hazard hit!  You made it " + score + " meters!");
+            Time.timeScale = 0;
+            gameOverScreen.SetActive(true);
+            
         }
     }
 }
