@@ -1807,6 +1807,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle:
   - {fileID: 9052625485457189366, guid: 513085e33e4c542f7b5f16de28556d49, type: 3}
+  - {fileID: 1771047828283729654, guid: a06016b533df249c69838aec5fc824c4, type: 3}
+  - {fileID: 5504469315641448308, guid: d23301ab0841849a3be0b83a2ffcef6d, type: 3}
+  - {fileID: 2887212107232668154, guid: d81851137aa62447bb1b3159785f4252, type: 3}
   - {fileID: 2637993893398622447, guid: 865f0c269185c42019c66d3ecef06ddd, type: 3}
   smallMin: 0.25
   smallMax: 0.75

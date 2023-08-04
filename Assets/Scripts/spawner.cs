@@ -12,6 +12,7 @@ public class spawner : MonoBehaviour
     void Start()
     {
             StartCoroutine("Spawn");
+            Debug.Log(obstacle.Length);
             //InvokeRepeating("ObjectSpawner", 1, Random.Range(.25f, 1.5f));
     }
 
@@ -30,8 +31,9 @@ public class spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnDelay);
         randomObstacle = Random.Range(0, obstacle.Length);
+        Debug.Log(randomObstacle);
         Instantiate(obstacle[randomObstacle], transform.position, Quaternion.identity);
-        if (randomObstacle == 0)
+        if (randomObstacle < 2)
         {
             spawnDelay = Random.Range(largeMin, largeMax);
         } else {
