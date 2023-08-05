@@ -8,6 +8,7 @@ public class uiController : MonoBehaviour
 {
     player player;
     TMP_Text distanceText;
+    public int distance;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class uiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int distance = Mathf.FloorToInt(player.distance);
+        distance = Mathf.FloorToInt(player.distance);
         distanceText.text = distance + " m";
     }
 }
