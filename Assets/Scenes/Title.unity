@@ -927,6 +927,7 @@ MonoBehaviour:
   OffSprite: {fileID: 21300000, guid: b59f4f953e90a449392ffd6186100437, type: 3}
   OnSprite: {fileID: 21300000, guid: f36ab977b753a49d3820600b092262d3, type: 3}
   spriteRenderer: {fileID: 2134862116}
+  sceneName: Main
 --- !u!212 &2134862116
 SpriteRenderer:
   m_ObjectHideFlags: 0

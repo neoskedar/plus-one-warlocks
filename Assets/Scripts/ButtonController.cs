@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
     public Sprite OffSprite;
     public Sprite OnSprite;
     public SpriteRenderer spriteRenderer;
+    public string sceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,6 @@ void OnMouseExit()
     {
         // Destroy the gameObject after clicking on it
         Debug.Log("Clicked on the GameObject.");
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(sceneName);
     }
 } 
