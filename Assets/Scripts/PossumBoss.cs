@@ -11,35 +11,57 @@ public class PossumBoss : MonoBehaviour
     private float dirX = 1f;
     private bool facingRight;
     public float moveSpeed = 5f;
-    
-    [SerializeField] Transform[] Points;
-
-    private int pointsIndex;
+    public float timer;
+    public float seconds = 10f;
+    private bool canMove;
 
     // Start is called before the first frame update
     void Start()
     {
         localScale = transform.localScale;
-        transform.position = Points[pointsIndex].transform.position;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pointsIndex <= Points.Length -1)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, Points[pointsIndex].transform.position, moveSpeed*Time.deltaTime);
-
-            if (transform.position == Points[pointsIndex].transform.position)
-            {
-                pointsIndex += 1;
-            }
-        }
+        
     }
     private void FixedUpdate()
     {
-        
+        CheckWhereToFace();
+
+        if (timer <= seconds)
+        {
+            timer += Time.fixedDeltaTime;
+            canMove = false;
+
+        }
+        else if (timer >= seconds)
+        {
+            timer = 0f;
+            canMove = true;
+        }
+
+        if (canMove)
+        {
+            if (!facingRight)
+                transform.Translate(Vector2.right * moveSpeed * Time.deltaTime, Space.World);
+            if (facingRight)
+                transform.Translate(Vector2.left * moveSpeed * Time.deltaTime, Space.World);
+        }
+        if (transform.position.x <= 2)
+        {
+            dirX *= -1;
+            timer = 0f;
+            canMove = false;
+        } else if (transform.position.x >= 35)
+        {
+            dirX *= -1;
+            timer = 0f;
+            canMove = false;
+        } 
+
     }
     private void LateUpdate()
     {

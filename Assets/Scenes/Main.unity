@@ -170,12 +170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0}
-  moveSpeed: 5
-  Points:
-  - {fileID: 1409781213}
-  - {fileID: 674552107}
-  - {fileID: 1105174795}
-  - {fileID: 0}
+  moveSpeed: 20
+  timer: 0
+  seconds: 0
 --- !u!61 &60255201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3133,6 +3130,10 @@ PrefabInstance:
     - target: {fileID: 9177858014462669389, guid: 751f2e05b523a814986a605b03c3d5d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9177858014462669426, guid: 751f2e05b523a814986a605b03c3d5d0, type: 3}
+      propertyPath: moveSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9177858014462669426, guid: 751f2e05b523a814986a605b03c3d5d0, type: 3}
       propertyPath: Points.Array.size
